@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="./outputs/earth-pixel.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="Earth-Beat-Project.md" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Earth Sound Map — Earth Information Jukebox</title>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">NASA SPACE APPS 2026 · SOLO MVP</div>
+          <h1>Earth Sound Map</h1>
+          <p>
+            An Earth Information Jukebox prototype that turns Earth data into
+            something people can hear, not just see.
+          </p>
+        </div>
+        <div class="badge">EIC → Sound</div>
+      </div>
+      <section class="grid">
+        <article class="card wide">
+          <h2>Live Earth Signal / Try the sonification</h2>
+          <div class="viz">
+            <canvas
+              id="scope"
+              width="1000"
+              height="300"
+              aria-label="data waveform"
+            ></canvas>
+          </div>
+          <div class="controls">
+            <button id="play" class="primary">▶ Start sound</button
+            ><button id="stop">■ Stop</button
+            ><select id="mode" aria-label="signal mode">
+              <option value="temperature">Temperature signal</option>
+              <option value="rain">Rainfall signal</option>
+              <option value="vegetation">Vegetation signal</option>
+            </select>
+          </div>
+          <div class="readout">
+            <div class="metric">
+              <small>Current signal</small><strong id="signal">0.00</strong>
+            </div>
+            <div class="metric">
+              <small>Sound pitch</small><strong id="pitch">220 Hz</strong>
+            </div>
+            <div class="metric">
+              <small>Color cue</small><strong id="color">Cyan</strong>
+            </div>
+          </div>
+          <p class="note">
+            Note — This MVP uses a simulated signal to demonstrate the UI and
+            sonification flow immediately. EIC frame metadata/data can be
+            connected next.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Data → Sound mapping</h2>
+          <div class="mapping">
+            <div><span>Higher value</span><b>Higher pitch</b></div>
+            <div><span>Faster change</span><b>Faster pulse</b></div>
+            <div><span>Heat</span><b>Orange</b></div>
+            <div><span>Water / forest</span><b>Blue / green</b></div>
+          </div>
+          <p class="timeline">
+            <b>Accessibility:</b> People who cannot see the visual trend can
+            still hear it, while sighted users can use both channels together.
+          </p>
+        </article>
+        <article class="card">
+          <h2>5-hour build plan</h2>
+          <div class="timeline">
+            <p>
+              <b>0:00–0:30</b> — Confirm challenge story and lock the MVP scope
+            </p>
+            <p>
+              <b>0:30–1:30</b> — Build the HTML/CSS layout and visual signal
+              canvas
+            </p>
+            <p>
+              <b>1:30–3:00</b> — Add Web Audio oscillator, mapping, play/stop
+              controls
+            </p>
+            <p>
+              <b>3:00–4:15</b> — Add Earth data notes, accessibility, and polish
+            </p>
+            <p>
+              <b>4:15–5:00</b> — Prepare demo script, screen recording, and
+              submission checklist
+            </p>
+          </div>
+        </article>
+        <article class="card wide">
+          <h2>Submission story</h2>
+          <p>
+            “We turn changes on Earth into something people can hear, not just a
+            chart they can see. This jukebox represents data trends through
+            pitch, rhythm, and color at the same time.”
+          </p>
+          <p class="footer">
+            Prototype alignment: This interface pairs Earth Information Center
+            visual frames with real-time dynamic sonification, matching the core
+            goal of the official challenge. Source:
+            <a
+              href="https://www.spaceappschallenge.org/2026/challenges/the-earth-information-jukebox/"
+              target="_blank"
+              rel="noreferrer"
+              >official challenge page</a
+            >
+          </p>
+        </article>
+      </section>
+    </main>
+    <script src="./javascript/app.js"></script>
+  </body>
+</html>
